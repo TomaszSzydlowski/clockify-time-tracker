@@ -24,8 +24,11 @@ jobs:
         with:
           install-command: yarn --frozen-lockfile --silent
 
-      - name: Build project
-        run: yarn run build
+      - shell: bash
+        env:
+          VITE_MY_TEST_SECRET: ${{ secrets.VITE_MY_TEST_SECRET }}
+        run: |
+          yarn run build
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v2
