@@ -8,7 +8,7 @@
     "predeploy": "yarn run build",
     "deploy": "gh-pages -d dist",
     "dev": "vite",
-    "build": "tsc && vite build --base=./",
+    "build": "set VITE_MY_TEST_SECRET=${{ secrets.VITE_MY_TEST_SECRET }} && tsc && vite build --base=./ ",
     "preview": "vite preview"
   },
   "dependencies": {
