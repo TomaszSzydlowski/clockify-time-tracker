@@ -53,5 +53,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          VITE_MY_TEST_SECRET: ${{ secrets.VITE_MY_TEST_SECRET }}
           publish_dir: ./dist
